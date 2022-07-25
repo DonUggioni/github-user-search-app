@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/* font-family: 'Space Mono', monospace; */
+
+:root {
+  /* Light mode */
+  --background: rgb(246, 248, 255);
+  --card_background: rgb(254, 254, 254);
+  --text_color: rgb(75, 106, 155);
+  --dark_blue: rgb(43, 52, 66);
+  --blue: rgb(0, 121, 255);
+  --greyish_blue: rgb(105, 124, 154);
+  --btn_hover: rgb(96, 171, 255);
+  --error_message: rgb(247, 70, 70);
+
+  /* Dark mode */
+  --background_dark_mode: rgb(20, 29, 47);
+  --card_background_dark_mode: rgb(30, 42, 71);
+  --white: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+p,
+span {
+  display: block;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  background-color: var(--background);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  width: 73rem;
+}
+
+.container {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app__name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--dark_blue);
+}
+
+.mode__selector {
+  display: flex;
+  gap: 1.6rem;
+  cursor: pointer;
+}
+
+.theme {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--greyish_blue);
+}
+
+/* SEARCH FIELD */
+.search__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 1rem 3.2rem;
+  background-color: var(--card_background);
+  border-radius: 15px;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+}
+
+.search_wrapper,
+.btn__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.input {
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  font-family: inherit;
+  width: 40rem;
+}
+
+.error__message {
+  font-weight: 700;
+  color: var(--error_message);
+}
+
+.search__btn {
+  padding: 1.25rem 2.4rem;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  color: var(--white);
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search__btn:hover {
+  background-color: var(--btn_hover);
+}
+
+/* USER INFO */
+.header__wrapper {
+  display: flex;
+}
+
+.user__img {
+  padding-right: 3.8rem;
+}
+
+.user__img img {
+  width: 11.7rem;
+  border-radius: 100px;
+}
+
+.user__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

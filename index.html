@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/app.js"></script>
+
+    <title>Frontend Mentor | GitHub user search app</title>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <span class="app__name">devfinder</span>
+        <div class="mode__selector">
+          <p class="theme">dark</p>
+          <img src="./assets/icon-moon.svg" alt="Dark mode icon" />
+        </div>
+      </div>
+
+      <div class="container">
+        <section class="search__field">
+          <div class="search_wrapper">
+            <img
+              src="./assets/icon-search.svg"
+              alt="Search icon"
+              class="search__icon"
+            />
+            <input
+              type="text"
+              class="input"
+              placeholder="Search GitHub username..."
+            />
+          </div>
+          <div class="btn__wrapper">
+            <p class="error__message">No results</p>
+            <button class="search__btn">Search</button>
+          </div>
+        </section>
+
+        <section class="user__info">
+          <div class="header__wrapper">
+            <div class="user__img">
+              <img
+                src="https://avatars.githubusercontent.com/u/99286931?s=400&u=d08c5653c83d74933585b16ff9e70b23972f211a&v=4"
+                alt="Picture of user"
+                class="info__header"
+              />
+            </div>
+            <div class="user__wrapper">
+              <div class="user">
+                <h1 class="user__name">Renan Tiscoski</h1>
+                <span class="user__tag">@donuggioni</span>
+              </div>
+              <div class="date">
+                <p class="join__date">Joined 25 Jan 2011</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile__info__wrapper">
+            <p class="profile__bio">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              sunt accusamus delectus reiciendis provident, aliquid sint aliquam
+              deleniti vitae iure nulla nihil. Corporis laboriosam consectetur,
+              illo earum ex assumenda illum.
+            </p>
+
+            <div class="stats__container">
+              <div class="repos__wrapper">
+                <p class="stat">Repos</p>
+                <span class="total">8</span>
+              </div>
+              <div class="repos__wrapper">
+                <p class="stat">Followers</p>
+                <span class="total">651</span>
+              </div>
+              <div class="repos__wrapper">
+                <p class="stat">Following</p>
+                <span class="total">654</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
