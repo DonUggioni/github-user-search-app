@@ -27,8 +27,10 @@
 
 img,
 p,
-span {
+span,
+a {
   display: block;
+  text-decoration: none;
 }
 
 html {
@@ -50,12 +52,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3.6rem;
-  width: 73rem;
+  max-width: 73rem;
 }
 
 .container {
   display: grid;
   gap: 2.4rem;
+  width: 100%;
 }
 
 .header {
@@ -74,6 +77,10 @@ main {
   display: flex;
   gap: 1.6rem;
   cursor: pointer;
+}
+
+.icon__moon {
+  color: var(--text_color);
 }
 
 .theme {
@@ -133,6 +140,21 @@ main {
 }
 
 /* USER INFO */
+.user__info {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: repeat(3, max-content);
+  padding: 4.8rem;
+  background-color: var(--card_background);
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  border-radius: 15px;
+}
+
+.profile__info__wrapper {
+  max-width: 48rem;
+  display: grid;
+}
+
 .header__wrapper {
   display: flex;
 }
@@ -146,8 +168,83 @@ main {
   border-radius: 100px;
 }
 
+.user__name {
+  color: var(--dark_blue);
+  line-height: 1.6;
+}
+
+.user__tag {
+  color: var(--blue);
+}
+
+.join__date,
+.profile__bio {
+  color: var(--text_color);
+  line-height: 1.6;
+}
+
+.profile__bio {
+  margin-bottom: 3.2rem;
+}
+
 .user__wrapper {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* STATS */
+.stats__container {
+  display: flex;
+  align-items: center;
+  gap: 9rem;
+  padding: 1.6rem 3.2rem;
+  background-color: var(--background);
+  border-radius: 10px;
+  margin-bottom: 3.8rem;
+}
+
+.stat {
+  font-size: 1.3rem;
+  color: var(--text_color);
+  line-height: 2;
+}
+
+.total {
+  font-size: 2.2rem;
+  color: var(--dark_blue);
+  font-weight: 700;
+}
+
+/* GENERAL INFO */
+.general__info__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6rem;
+  row-gap: 2rem;
+}
+
+.icon {
+  color: var(--text_color);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.info span,
+.info a {
+  color: var(--text_color);
+}
+
+.website:active,
+.website:visited {
+  color: var(--text_color);
+}
+
+.website:hover {
+  text-decoration: underline;
 }
