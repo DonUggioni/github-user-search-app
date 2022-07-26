@@ -12,6 +12,7 @@
   --greyish_blue: rgb(105, 124, 154);
   --btn_hover: rgb(96, 171, 255);
   --error_message: rgb(247, 70, 70);
+  --transition_time: all 0.3s;
 
   /* Dark mode */
   --background_dark_mode: rgb(20, 29, 47);
@@ -46,6 +47,7 @@ body {
   font-family: 'Space Mono', monospace;
   font-size: 1.5rem;
   background-color: var(--background);
+  transition: var(--transition_time);
 }
 
 main {
@@ -71,6 +73,7 @@ main {
   font-size: 2.6rem;
   font-weight: 700;
   color: var(--dark_blue);
+  transition: var(--transition_time);
 }
 
 .mode__selector {
@@ -79,14 +82,28 @@ main {
   cursor: pointer;
 }
 
+.mode__selector--light {
+  display: none;
+}
+
+.selector__wrapper {
+  display: flex;
+  gap: 1.6rem;
+}
+
 .icon__moon {
-  color: var(--text_color);
+  color: var(--greyish_blue);
+}
+
+.icon__sun {
+  color: var(--white);
 }
 
 .theme {
   font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 2.5px;
   color: var(--greyish_blue);
 }
 
@@ -99,6 +116,7 @@ main {
   background-color: var(--card_background);
   border-radius: 15px;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  transition: var(--transition_time);
 }
 
 .search_wrapper,
@@ -115,6 +133,13 @@ main {
   font-size: 1.8rem;
   font-family: inherit;
   width: 40rem;
+  background-color: var(--card_background);
+  transition: var(--transition_time);
+}
+
+.input::placeholder {
+  background-color: var(--card_background);
+  transition: var(--transition_time);
 }
 
 .error__message {
@@ -148,6 +173,7 @@ main {
   background-color: var(--card_background);
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   border-radius: 15px;
+  transition: var(--transition_time);
 }
 
 .profile__info__wrapper {
@@ -171,6 +197,7 @@ main {
 .user__name {
   color: var(--dark_blue);
   line-height: 1.6;
+  transition: var(--transition_time);
 }
 
 .user__tag {
@@ -181,6 +208,7 @@ main {
 .profile__bio {
   color: var(--text_color);
   line-height: 1.6;
+  transition: var(--transition_time);
 }
 
 .profile__bio {
@@ -203,18 +231,21 @@ main {
   background-color: var(--background);
   border-radius: 10px;
   margin-bottom: 3.8rem;
+  transition: var(--transition_time);
 }
 
 .stat {
   font-size: 1.3rem;
   color: var(--text_color);
   line-height: 2;
+  transition: var(--transition_time);
 }
 
 .total {
   font-size: 2.2rem;
   color: var(--dark_blue);
   font-weight: 700;
+  transition: var(--transition_time);
 }
 
 /* GENERAL INFO */
@@ -227,6 +258,7 @@ main {
 
 .icon {
   color: var(--text_color);
+  transition: var(--transition_time);
 }
 
 .info {
@@ -238,6 +270,7 @@ main {
 .info span,
 .info a {
   color: var(--text_color);
+  transition: var(--transition_time);
 }
 
 .website:active,

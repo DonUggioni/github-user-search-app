@@ -1,0 +1,62 @@
+:root {
+  /* Dark mode  */
+  --background_dark_mode: rgb(20, 29, 47);
+  --card_background_dark_mode: rgb(30, 42, 71);
+  --white: rgb(255, 255, 255);
+}
+
+body.dark {
+  background-color: var(--background_dark_mode);
+}
+
+.dark .app__name {
+  color: var(--white);
+}
+
+.dark .mode__selector--light {
+  display: block;
+}
+
+.dark .mode__selector--dark {
+  display: none;
+}
+
+.dark .theme {
+  color: var(--white);
+}
+
+.dark .search__field,
+.dark .user__info {
+  background-color: var(--card_background_dark_mode);
+  box-shadow: none;
+}
+
+.dark .input,
+.dark .input::placeholder {
+  color: var(--white);
+  background-color: var(--card_background_dark_mode);
+}
+
+.dark .stats__container {
+  background-color: var(--background_dark_mode);
+}
+
+.dark .profile__bio {
+  color: var(--white);
+  opacity: 0.75;
+}
+
+.dark .user__name,
+.dark .join__date,
+.dark .stat,
+.dark .total {
+  color: var(--white);
+}
+
+.dark .info span,
+.dark .info a,
+.dark .website:active,
+.dark .website:visited,
+.dark .icon {
+  color: var(--white);
+}
