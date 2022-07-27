@@ -145,6 +145,7 @@ main {
 .error__message {
   font-weight: 700;
   color: var(--error_message);
+  visibility: hidden;
 }
 
 .search__btn {
