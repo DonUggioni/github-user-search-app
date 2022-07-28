@@ -12,9 +12,9 @@ const selectMode = function () {
 };
 
 // https://api.github.com/users/
-const getJSON = async function (userName) {
+const getJSON = async function (url) {
   try {
-    const res = await fetch(`https://api.github.com/users/${userName}`);
+    const res = await fetch(`${url}`);
     const data = await res.json();
     if (!res.ok) throw new Error('Oops!');
     return data;
@@ -23,8 +23,8 @@ const getJSON = async function (userName) {
   }
 };
 
-const renderInfo = async function () {
-  const info = await getJSON();
+const renderInfo = async function (userName) {
+  const info = await getJSON(`https://api.github.com/users/${userName}`);
 
   // Format date
   const options = {
@@ -162,10 +162,9 @@ modeSelector.addEventListener('click', () => {
   selectMode();
 });
 
-document.addEventListener('load', () => {
-  renderInfo();
-});
+document.addEventListener('load', renderInfo('donuggioni'));
 
-searchBtn.addEventListener('click', () => {
-  renderInfo();
+searchBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  renderInfo(searchInput.value.toLowerCase().trim());
 });
