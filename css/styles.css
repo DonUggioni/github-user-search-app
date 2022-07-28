@@ -205,6 +205,10 @@ main {
   color: var(--blue);
 }
 
+.user__tag:hover {
+  text-decoration: underline;
+}
+
 .join__date,
 .profile__bio {
   color: var(--text_color);
