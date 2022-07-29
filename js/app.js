@@ -1,9 +1,11 @@
 'use strict';
 
 const body = document.querySelector('body');
+const submitForm = document.querySelector('.form');
 const modeSelector = document.querySelector('.mode__selector__wrapper');
+const modeSelectorDark = document.querySelector('.mode__selector--dark');
+const modeSelectorLight = document.querySelector('.mode__selector--light');
 const searchInput = document.querySelector('.input');
-const searchBtn = document.querySelector('.search__btn');
 const userInfoEl = document.querySelector('.user__info');
 const errorMessage = document.querySelector('.error__message');
 const userNameEl = document.querySelector('.user__name');
@@ -18,17 +20,34 @@ const userLocation = document.querySelector('.location');
 const twitterName = document.querySelector('.twitter');
 const blog = document.querySelector('.website');
 const company = document.querySelector('.company');
+const generalInfo = document.querySelector('.info');
+console.log(generalInfo);
+
+const addHoverEffect = function () {
+  if (body.classList.contains('dark')) {
+    modeSelectorLight.classList.add('mode__selector--light-hover');
+  } else {
+    modeSelectorDark.classList.add('mode__selector--dark-hover');
+  }
+};
+
+const removeHoverEffect = function () {
+  if (body.classList.contains('dark')) {
+    modeSelectorLight.classList.remove('mode__selector--light-hover');
+  } else {
+    modeSelectorDark.classList.remove('mode__selector--dark-hover');
+  }
+};
 
 const selectMode = function () {
   body.classList.toggle('dark');
 };
 
-const notAvailableInfo = function (el1, el2) {
-  el1.style.opacity = '0.5';
-  el2.style.opacity = '0.5';
+const unavailable = function (element) {
+  element.parentElement.classList.add('info--unavailable');
+  element.textContent = 'Not Available';
 };
 
-// https://api.github.com/users/
 const getJSON = async function (url) {
   try {
     const res = await fetch(`${url}`);
@@ -43,6 +62,7 @@ const getJSON = async function (url) {
 
 const renderInfo = async function (userName) {
   const info = await getJSON(`https://api.github.com/users/${userName}`);
+  console.log(info);
 
   // Format date
   const options = {
@@ -64,25 +84,38 @@ const renderInfo = async function (userName) {
   totalFollowers.textContent = info.followers;
   totalFollowing.textContent = info.following;
   userLocation.textContent = `${
-    !info.location ? 'Not available.' : info.location
+    !info.location ? unavailable(userLocation, 'Not available') : info.location
   }`;
   twitterName.textContent = `${
-    !info.twitter_username ? 'Not available.' : info.twitter_username
+    !info.twitter_username ? unavailable(twitterName) : info.twitter_username
   }`;
   blog.href = `${!info.blog ? '#' : info.blog}`;
-  blog.textContent = `${!info.blog ? 'Not available.' : info.blog}`;
-  company.textContent = `${!info.company ? 'Not available.' : info.company}`;
+  blog.textContent = `${!info.blog ? unavailable(blog) : info.blog}`;
+  company.textContent = `${
+    !info.company ? unavailable(company) : info.company
+  }`;
 
   searchInput.value = '';
 };
 
+// Dark/Light selector
 modeSelector.addEventListener('click', () => {
   selectMode();
 });
 
+// Adds hover effect to mode selector
+modeSelector.addEventListener('mouseenter', () => {
+  addHoverEffect();
+});
+
+modeSelector.addEventListener('mouseleave', () => {
+  removeHoverEffect();
+});
+
+// Loads a default page
 document.addEventListener('load', renderInfo('donuggioni'));
 
-searchBtn.addEventListener('click', (e) => {
+submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
   errorMessage.style.visibility = 'hidden';
 

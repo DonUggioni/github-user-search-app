@@ -61,22 +61,24 @@
 
       <div class="container">
         <section class="search__field">
-          <div class="search_wrapper">
-            <img
-              src="./assets/icon-search.svg"
-              alt="Search icon"
-              class="search__icon"
-            />
-            <input
-              type="text"
-              class="input"
-              placeholder="Search GitHub username..."
-            />
-          </div>
-          <div class="btn__wrapper">
-            <p class="error__message">No results</p>
-            <button class="search__btn">Search</button>
-          </div>
+          <form action="submit" class="form">
+            <div class="search_wrapper">
+              <img
+                src="./assets/icon-search.svg"
+                alt="Search icon"
+                class="search__icon"
+              />
+              <input
+                type="text"
+                class="input"
+                placeholder="Search GitHub username..."
+              />
+            </div>
+            <div class="btn__wrapper">
+              <p class="error__message">No results</p>
+              <button class="search__btn" type="submit">Search</button>
+            </div>
+          </form>
         </section>
 
         <section class="user__info">

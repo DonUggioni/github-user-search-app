@@ -13,6 +13,8 @@
   --btn_hover: rgb(96, 171, 255);
   --error_message: rgb(247, 70, 70);
   --transition_time: all 0.3s;
+  --mode_selector_light-hover: rgba(34, 39, 49, 1);
+  --mode_selector_dark-hover: rgba(144, 164, 212, 1);
 
   /* Dark mode */
   --background_dark_mode: rgb(20, 29, 47);
@@ -76,6 +78,7 @@ main {
   transition: var(--transition_time);
 }
 
+/* DARK/LIGHT SELECTOR */
 .mode__selector {
   display: flex;
   gap: 1.6rem;
@@ -92,11 +95,13 @@ main {
 }
 
 .icon__moon {
+  transition: var(--transition_time);
   color: var(--greyish_blue);
 }
 
 .icon__sun {
   color: var(--white);
+  transition: var(--transition_time);
 }
 
 .theme {
@@ -105,6 +110,17 @@ main {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   color: var(--greyish_blue);
+  transition: var(--transition_time);
+}
+/* DARK/LIGHT SELECTOR ON HOVER */
+.mode__selector--dark-hover .theme,
+.mode__selector--dark-hover .icon__moon {
+  color: var(--mode_selector_light-hover);
+}
+
+.mode__selector--light-hover .theme,
+.mode__selector--light-hover .icon__sun {
+  color: var(--mode_selector_dark-hover) !important;
 }
 
 /* SEARCH FIELD */
@@ -117,6 +133,11 @@ main {
   border-radius: 15px;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   transition: var(--transition_time);
+}
+
+.form {
+  width: 100%;
+  display: flex;
 }
 
 .search_wrapper,
@@ -285,4 +306,12 @@ main {
 
 .website:hover {
   text-decoration: underline;
+}
+
+/* UNAVAILABLE INFO */
+.info--unavailable .icon,
+.info--unavailable span,
+.info--unavailable a {
+  opacity: 0.5;
+  pointer-events: none;
 }
