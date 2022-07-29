@@ -21,7 +21,6 @@ const twitterName = document.querySelector('.twitter');
 const blog = document.querySelector('.website');
 const company = document.querySelector('.company');
 const generalInfo = document.querySelector('.info');
-console.log(generalInfo);
 
 const addHoverEffect = function () {
   if (body.classList.contains('dark')) {
@@ -39,30 +38,33 @@ const removeHoverEffect = function () {
   }
 };
 
+// Toggle between dark and light
 const selectMode = function () {
   body.classList.toggle('dark');
 };
 
+// Changes element color and makes links not clickable if not available
 const unavailable = function (element) {
   element.parentElement.classList.add('info--unavailable');
-  element.textContent = 'Not Available';
+  return 'Not Available';
 };
 
+// Fetch data from API
 const getJSON = async function (url) {
   try {
     const res = await fetch(`${url}`);
+    console.log(res);
     const data = await res.json();
     if (!res.ok) throw new Error('Oops!');
     return data;
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
     errorMessage.style.visibility = 'visible';
   }
 };
 
 const renderInfo = async function (userName) {
   const info = await getJSON(`https://api.github.com/users/${userName}`);
-  console.log(info);
 
   // Format date
   const options = {
@@ -84,7 +86,7 @@ const renderInfo = async function (userName) {
   totalFollowers.textContent = info.followers;
   totalFollowing.textContent = info.following;
   userLocation.textContent = `${
-    !info.location ? unavailable(userLocation, 'Not available') : info.location
+    !info.location ? unavailable(userLocation) : info.location
   }`;
   twitterName.textContent = `${
     !info.twitter_username ? unavailable(twitterName) : info.twitter_username
