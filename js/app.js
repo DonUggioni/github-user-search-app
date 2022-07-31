@@ -20,7 +20,7 @@ const userLocation = document.querySelector('.location');
 const twitterName = document.querySelector('.twitter');
 const blog = document.querySelector('.website');
 const company = document.querySelector('.company');
-const generalInfo = document.querySelector('.info');
+const generalInfo = document.querySelectorAll('.info');
 
 const addHoverEffect = function () {
   if (body.classList.contains('dark')) {
@@ -41,6 +41,10 @@ const removeHoverEffect = function () {
 // Toggle between dark and light
 const selectMode = function () {
   body.classList.toggle('dark');
+};
+
+const removeClass = function () {
+  generalInfo.forEach((el) => el.classList.remove('info--unavailable'));
 };
 
 // Changes element color and makes links not clickable if not available
@@ -81,6 +85,7 @@ const renderInfo = async function (userName) {
   date = date;
   userTag.textContent = `@${info.login}`;
   userTag.href = info.html_url;
+  joinDate.textContent = date;
   userBio.textContent = `${!info.bio ? 'This user has no bio.' : info.bio}`;
   totalRepos.textContent = info.public_repos;
   totalFollowers.textContent = info.followers;
@@ -121,5 +126,6 @@ submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
   errorMessage.style.visibility = 'hidden';
 
+  removeClass();
   renderInfo(searchInput.value.toLowerCase().trim());
 });

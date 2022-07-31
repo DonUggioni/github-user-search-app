@@ -148,12 +148,20 @@ main {
   gap: 2.4rem;
 }
 
+.search_wrapper {
+  width: 100%;
+}
+
+.btn__wrapper {
+  position: relative;
+}
+
 .input {
   border: none;
   outline: none;
   font-size: 1.8rem;
   font-family: inherit;
-  width: 40rem;
+  width: 48rem;
   background-color: var(--card_background);
   transition: var(--transition_time);
 }
@@ -167,6 +175,8 @@ main {
   font-weight: 700;
   color: var(--error_message);
   visibility: hidden;
+  position: absolute;
+  left: -100%;
 }
 
 .search__btn {
@@ -179,7 +189,7 @@ main {
   font-family: inherit;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: var(--transition_time);
 }
 
 .search__btn:hover {
@@ -189,8 +199,8 @@ main {
 /* USER INFO */
 .user__info {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
-  grid-template-rows: repeat(3, max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(2, max-content);
   padding: 4.8rem;
   background-color: var(--card_background);
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
@@ -198,10 +208,9 @@ main {
   transition: var(--transition_time);
 }
 
-.profile__info__wrapper {
+/* .profile__info__wrapper {
   max-width: 48rem;
-  display: grid;
-}
+} */
 
 .header__wrapper {
   display: flex;
@@ -209,6 +218,7 @@ main {
 
 .user__img {
   padding-right: 3.8rem;
+  height: fit-content;
 }
 
 .user__img img {

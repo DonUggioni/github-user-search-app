@@ -1,0 +1,12 @@
+@media (max-width: 50em) {
+  .user__info {
+    padding: 4rem;
+  }
+
+  .user__wrapper {
+    justify-content: unset;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3.8rem;
+  }
+}
