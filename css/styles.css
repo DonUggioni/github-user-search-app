@@ -56,13 +56,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3.6rem;
-  max-width: 73rem;
 }
 
 .container {
   display: grid;
   gap: 2.4rem;
-  width: 100%;
+  max-width: 73rem;
 }
 
 .header {
@@ -208,9 +207,11 @@ main {
   transition: var(--transition_time);
 }
 
-/* .profile__info__wrapper {
+.profile__info__wrapper {
   max-width: 48rem;
-} */
+  grid-row: 2;
+  grid-column: 2;
+}
 
 .header__wrapper {
   display: flex;
@@ -218,7 +219,6 @@ main {
 
 .user__img {
   padding-right: 3.8rem;
-  height: fit-content;
 }
 
 .user__img img {
